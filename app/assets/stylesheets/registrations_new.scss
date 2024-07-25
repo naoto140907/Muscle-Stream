@@ -1,0 +1,69 @@
+.blank3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("gym.jpg");
+    background-size: 100% auto;
+    height: 700px;
+}
+.blank4{
+    text-align: center;
+    text-align: center;
+    color: white;
+    //background: #575B46;
+    border-radius: 9px;
+    margin: 20px 5px;
+    padding: 20px 40px;
+}
+
+// ここから下は、こだわりポイント！
+// どこの aタグなのかわからんから、.class名スペースaとする
+    .blank2 a{
+    color:#ffffff;
+    }
+    .field label {
+    font-weight: 100;
+    font-size: 15px;
+    }
+// // 場合に応じて入力する場所の大きさ変えたいよね！その場合は、.class名スペースinputで差別化する！
+// // passwardの枠だけでかくしたかったらどうしたらいいかな？？
+    .field input[type="text"] {
+        background: #464d5ba6;
+        border-radius: 5px;
+        border: 1px #060339 solid;
+    }
+
+    .field input[type="email"] {
+        border-style: none;
+        width: 200px;
+        height: 30px;
+        background: #464d5ba6;
+        border-radius: 10px;
+        border: 1px #060339 solid;
+    }
+    .field input[type="password"] {
+        border-style: none;
+        width: 200px;
+        height: 30px;
+        background: #464d5ba6;
+        border-radius: 10px;
+        border: 1px #060339 solid;
+    }
+
+    .actions input[type="submit"] {
+        margin-top: 10px;
+        border-style: none;
+        width: 150px;
+        height: 30px;
+        //background: #464d5ba6;
+        border-radius: 10px;
+        border: 1px #060339 solid;
+    }
+    .actions input[type="submit"]:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom,#1C94EA,#5ba2f4f3);
+    }
+
+    a{
+        color: white
+    }

@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ * {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+      background-image: url("gym.jpg");
+      background-size: 100% auto;
+      height: 700px;
+      font-family: 'ＭＳ Ｐ明朝','MS PMincho',sans-serif;
+  }
+  header {
+    background-color: #05060600;
+    height: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-hello-index{
+    background-color: #05060600;
+    height: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    
+  }
+  
+  
+  header a {
+    color: white; 
+    text-decoration: none; 
+  }
+  header h1 {
+    color: white;
+    margin-left: 20px;
+  }
+
+  .abc{
+    font-family: 'Segoe Script',sans-serif;
+    margin-right: auto; /* 左端に寄せるための余白を自動的に設定 */
+    z-index: 10;
+  }
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    
+    font-family: 'Segoe Script',sans-serif;
+    list-style: none;
+    margin-right: 40px;
+  }
+
+  header a:hover {
+    color: #f00;
+  }
+
+  .link-style-btn{
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: white;
+  }
+.link-style-btn:hover{
+    text-decoration: underline;
+    color: red;
+  }
+footer {
+    color: white;
+    height: 30px;
+    background-color: #000;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: flex-end;
+}

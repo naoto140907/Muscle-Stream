@@ -1,0 +1,99 @@
+<%= stylesheet_link_tag 'users_show', :media => "all" %>
+
+<div class="user-profile">
+  <div class="profile-photo">
+    <% if @user.photo.attached? %>
+    <%= image_tag @user.photo, size: '250x200'%>
+    <% end %>
+  </div>
+  <div class="profile-details">
+    <h1></h1>
+    <div class="name">
+      Name : <%= @user.name %>
+    </div>
+
+    <div class="email">
+    <p>Email : <%= @user.email %></p>
+    </div>
+
+    <div class="profile">
+    <p>Profile : <%= @user.profile %></p>
+    </div>
+
+    <div class="edit1">
+    <% if current_user.id == @user.id %>
+      <%= link_to "Edit", edit_user_registration_path %>
+    <% end %>
+    </div>
+
+  </div>
+</div>
+
+<!--<% if @user.photo.attached? %>
+    <%= image_tag @user.photo, size: '250x200'%>
+<% end %>
+<h1></h1>
+<div class="name">
+  名前 : <%= @user.name %>
+</div>
+<p>メールアドレス : <%= @user.email %></p>
+<p>プロフィール : <%= @user.profile %></p>
+
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
+-->
+
+
+<div class="posts-section">
+  <div class="left-section">
+    <h2>過去の投稿</h2>
+
+    <% @user.tweets.each do |t| %>
+      <div class = mytweet>
+
+      <p>free: <%= t.body %> </p>
+      <br>
+      <p>menu:<%= t.menu %> </p>
+      <br>
+      <p>diet:<%= t.diet %> </p>
+      <span class="timestamp"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+      <%= link_to "詳細", tweet_path(t.id) %>
+      </div>
+    <% end %>
+    
+
+    <br>
+  </div>
+  <div class="right-section">
+    <h2>いいねした投稿</h2>
+    <% @user.liked_tweets.each do |t| %>
+      <div class = mylike>
+      <p>name: <%=t.user.name%> </p>
+      <br>
+      <p>free: <%= t.body %> </p>
+      <br>
+      <p>menu:<%= t.menu %> </p>
+      <br>
+      <p>diet:<%= t.diet %> </p>
+      <span class="timestamp"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+      <%= link_to "詳細", tweet_path(t.id) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<!--
+<h2>過去の投稿一覧</h2>
+<% @user.tweets.each do |t| %>
+  <%= t.user.name %>
+  <%= t.body %>
+<% end %>
+
+<h2>ユーザーがいいねした投稿一覧</h2>
+<% @user.liked_tweets.each do |t| %>
+  <%= t.user.name %>
+  <%= t.body %>
+<% end %>
+
+<%= image_tag @user.image_url, size: "250x200" if @user.image? %>
+-->

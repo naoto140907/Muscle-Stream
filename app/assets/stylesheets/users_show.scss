@@ -1,0 +1,81 @@
+p{
+    color: white;
+}
+
+h2{
+    color: white;
+}
+
+.name{
+    color: white;
+    font-size: 30px;
+}
+.email{
+    color: white;
+    font-size: 30px;
+}
+
+.profile{
+    color: white;
+    font-size: 30px;
+}
+
+.edit1{
+    color: white;
+    font-size: 30px;
+}
+
+.user-profile {
+    display: flex;
+    //align-items: center; /* 縦方向の中央揃え */
+}
+
+.profile-photo {
+    margin-right: 20px; /* 写真とテキストの間隔 */
+}
+
+.profile-details {
+    flex: 1; /* テキスト部分を残りのスペースいっぱいに広げる */
+}
+
+.posts-section {
+    display: flex;
+}
+
+.left-section, .right-section {
+    flex: 1; /* 各セクションを均等に広げる */
+    padding: 20px; /* 適宜余白を設定 */
+}
+
+.left-section {
+    color: white;
+    //background-color: #f0f0f0; /* 左側セクションの背景色 */
+}
+
+.left-section h2{
+    text-align:center
+}
+
+.right-section h2{
+    text-align:center
+}
+.mytweet{
+    background: #46555bbf;
+    border-radius: 50px;
+    margin: 20px 5px;
+    padding: 20px 40px;
+}
+.right-section {
+    color: white;
+   // background-color: #e0e0e0; /* 右側セクションの背景色 */
+}
+
+.timestamp{
+    color: white;
+}
+.mylike{
+    background: #464d5bd1;
+    border-radius: 50px;
+    margin: 20px 5px;
+    padding: 20px 40px;
+}

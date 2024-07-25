@@ -1,0 +1,13 @@
+<!-- <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %> -->
+
+<%= form_for @tweet do |f| %>
+    <%= f.label :自由記述 %>
+    <%= f.text_field :body, :size => 140 %> 
+    <br>
+    <%= f.label :トレーニングメニュー %>
+    <%= f.text_field :menu, :size => 140 %> 
+    <br>
+    <%= f.label :食事 %>
+    <%= f.text_field :diet, :size => 140 %> 
+    <%= f.submit "編集する" %>
+<% end %>

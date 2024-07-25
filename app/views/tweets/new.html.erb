@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag 'tweets_new', :media => "all" %>
+
+<div class = blank6>
+<%= form_for @tweet do |f| %>
+
+<div class="field1">
+    <%= f.label :Free, class: "tweet2" %>
+    <%= f.text_area :body, class: 'form-control', rows: 10, cols: 100 %>
+</div>
+<div class="field2">
+    <%= f.label :"menu", class: "tweet2" %>
+    <%= f.text_area :menu, class: 'form-control',rows: 2, cols: 100 %>
+</div>
+
+<div class="field3">
+    <%= f.label :Diet, class: "tweet2" %>
+    <%= f.text_area :diet, class: 'form-control',rows: 2, cols: 100 %>
+</div>
+
+<div class="field">
+    <%= f.label :photo, class:"tweet2" %>
+    <%= f.file_field :photo %>
+  </div>
+<div class='form-group'>
+        <% Tag.all.each do |t| %>
+      <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+    <% end %>
+</div>  
+
+<%= f.submit "Tweetする" ,class:"tweet100"%>
+
+
+
+
+<% end %>
+</div>

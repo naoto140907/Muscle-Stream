@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MuscleStream</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://kit.fontawesome.com/670d82830b.js" crossorigin="anonymous"></script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% unless controller_name == "hello" && action_name == "index" %>
+    <header>
+      <h1></h1>
+      <div class="abc">
+        <h2>MuscleStream</h2>
+        </div>
+      <div class="header-list">
+        
+      <ul class="left-menu">
+      
+      <% if user_signed_in?%>
+      <li><%= link_to "MyPage", user_path(current_user.id) %></li>
+      <% end %>
+        <li><%= link_to "Timeline", tweets_path %></li>
+      </ul>
+      <ul class="right-menu">
+        <li><%= link_to "HOME", hello_index_path %></li>
+        <li><%= link_to "Post", new_tweet_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete ,class:"link-style-btn"%></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><%= link_to "Login", new_tweet_path %></li>
+        
+      </ul>
+        <!--<% if user_signed_in? %>
+
+        
+        <li><%= link_to "MyPage", user_path(current_user.id) %></li>
+        <% end %>
+        <li><%= link_to "TimeLine", tweets_path %></li>
+        
+        <li><%= link_to "HOME", hello_index_path %></li>
+        <li><%= link_to "Post",new_tweet_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><%= link_to "Login",new_tweet_path %></li>
+
+      </ul> -->
+      </div>
+    </header>
+    <% else %>
+      <header class="header-hello-index">
+      <h1></h1>
+      <div class="abc">
+        <h2>MuscleStream</h2>
+        </div>
+      <div class="header-list">
+        
+      <ul class="left-menu">
+      
+      
+      <% if user_signed_in?%>
+      <li><%= link_to "MyPage", user_path(current_user.id) %></li>
+      <% end %>
+        <li><%= link_to "Timeline", tweets_path %></li>
+      </ul>
+      <ul class="right-menu">
+        <li><%= link_to "HOME", hello_index_path %></li>
+        <li><%= link_to "Post", new_tweet_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete ,class:"link-style-btn"%></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><%= link_to "Login", new_tweet_path %></li>
+        
+      </ul>
+        <!--<% if user_signed_in? %>
+
+        
+        <li><%= link_to "MyPage", user_path(current_user.id) %></li>
+        <% end %>
+        <li><%= link_to "TimeLine", tweets_path %></li>
+        
+        <li><%= link_to "HOME", hello_index_path %></li>
+        <li><%= link_to "Post",new_tweet_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><%= link_to "Login",new_tweet_path %></li>
+
+      </ul> -->
+      </div>
+    </header>
+    <% end %>
+    <main>
+      <%= yield %>
+    </main>
+   <footer>
+      
+      <p>Design by Naoto Kikuta</p>
+    </footer>
+  </body>
+</html>
